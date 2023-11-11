@@ -4,7 +4,11 @@ import Button from 'react-bootstrap/Button';
 import { Form } from 'react-bootstrap';
 
 // components
+import SEO from '../../components/SEO/SEO';
 import TitleBox from '../../components/TitleBox/TitleBox';
+
+// data
+import { seoLists } from '../../assets/data/seoLists';
 
 const data = [
     { id : 1 , title : 'Please Enter' , value : ''}, // should return 0
@@ -35,10 +39,15 @@ export default function CountSmileys() {
 
     return (
         <>
+           <SEO
+                title={seoLists[3].title}
+                desc={seoLists[3].desc}
+                favicon={seoLists[3].favicon}
+            />
             <main className='container d-flex flex-column align-items-center px-2 py-3'>
                 <TitleBox
-                    title='Count the smiley faces'
-                    desc='Count the smiley faces.'
+                    title={seoLists[3].page}
+                    desc='Example : [&apos;:)&apos; , &apos;;(&apos; , &apos;;}&apos; , &apos;:-D&apos;] should return 2'
                 />
                 <Form className='mb-4' style={{ width: '330px' }}>
                     <Form.Group>

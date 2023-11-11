@@ -4,7 +4,11 @@ import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 // components
+import SEO from '../../components/SEO/SEO';
 import TitleBox from '../../components/TitleBox/TitleBox';
+
+// data
+import { seoLists } from '../../assets/data/seoLists';
 
 export default function Permutations() {
 
@@ -31,10 +35,15 @@ export default function Permutations() {
 
   return (
     <>
+      <SEO 
+        title={seoLists[1].title}
+        desc={seoLists[1].desc}
+        favicon={seoLists[1].favicon}
+      />
       <main className='container d-flex flex-column align-items-center px-2 py-3 w-100'>
         <TitleBox
-          title='Permutations'
-          desc='permutations test.'
+          title={seoLists[1].page}
+          desc='Example : With input &apos;ab&apos; function should return [&apos;ab&apos; , &apos;ba&apos;]'
         />
         <Form className='mb-4' style={{ width : '330px' }}>
           <Form.Group>

@@ -1,0 +1,10 @@
+.menu-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+@media (320px <= width <= 502px) {
+    .menu-cards-container {
+        flex-direction: column;
+    }
+}

@@ -1,14 +1,18 @@
-import React , { useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 
 // components
+import SEO from '../../components/SEO/SEO';
 import TitleBox from '../../components/TitleBox/TitleBox';
+
+// data
+import { seoLists } from '../../assets/data/seoLists';
 
 export default function FindTheOdd() {
 
-    const [ inputOdd , setInputOdd ] = useState("");
+    const [inputOdd, setInputOdd] = useState("");
     const navigate = useNavigate();
 
     // let arr = [1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1];
@@ -20,7 +24,7 @@ export default function FindTheOdd() {
             for (let j = 0; j < arr.length; j++) {
                 if (arr[i] == arr[j]) {
                     count++;
-                }
+                };
             };
             if (count % 2 !== 0) {
                 return arr[i];
@@ -32,11 +36,16 @@ export default function FindTheOdd() {
 
     return (
         <>
+            <SEO
+                title={seoLists[2].title}
+                desc={seoLists[2].desc}
+                favicon={seoLists[2].favicon}
+            />
             <main className='container'>
                 <main className='container d-flex flex-column align-items-center px-2 py-3'>
                     <TitleBox
-                        title='Find the odd int'
-                        desc='Find the odd int test.'
+                        title={seoLists[2].page}
+                        desc={seoLists[2].desc}
                     />
                     <Form className='mb-4' style={{ width: '330px' }}>
                         <Form.Group>
